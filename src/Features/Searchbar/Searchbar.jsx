@@ -17,15 +17,18 @@ function Searchbar() {
     const handleSearchSubmit = (e) => {
         e.preventDefault();
         if (searchTerm.trim()) {
-            dispatch(searchPosts(setSearchTerm));
+            dispatch(searchPosts(searchTerm));
         }
     }
 
     useEffect(() => {
         if (searchTerm) {
-          dispatch(searchPosts(searchTerm)); // Automatically search on term change
+          dispatch(searchPosts(searchTerm)); // Automatically search when term changes
+        } else {
+          // Reset results if the searchTerm is cleared
+          dispatch({ type: 'search/resetResults' });
         }
-      }, [searchTerm, dispatch]);
+    }, [searchTerm, dispatch]);
     
       if (status === 'loading') {
         return <div>Loading...</div>;
@@ -35,7 +38,7 @@ function Searchbar() {
         return <div>Error: {error}</div>;
       }
   
-    return (
+      return (
         <div>
           <h1>Search Reddit Posts</h1>
           <form onSubmit={handleSearchSubmit}>
@@ -47,17 +50,9 @@ function Searchbar() {
             />
             <button type="submit">Search</button>
           </form>
-          <ul>
-            {results?.map((post) => (
-              <li key={post.id}>
-                <a href={`https://reddit.com${post.permalink}`} target="_blank" rel="noopener noreferrer">
-                  {post.title}
-                </a>
-              </li>
-            ))}
-          </ul>
+
         </div>
-    );
+      );
 };
 
 export default Searchbar
