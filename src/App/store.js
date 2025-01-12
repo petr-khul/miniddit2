@@ -1,10 +1,12 @@
 import {configureStore} from "@reduxjs/toolkit";
 import postListReducer from "../Features/PostList/postListSlice";
+import searchReducer from "../Features/Searchbar/searchSlice.js";
 
 const store = configureStore({
     reducer: 
     {
-        postList: postListReducer
+        postList: postListReducer,
+        search: searchReducer
     },
 });
 
