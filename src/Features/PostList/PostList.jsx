@@ -1,7 +1,8 @@
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "./postListSlice";
-import { searchPosts } from "../Searchbar/searchSlice";
+import Post from "../Post/Post";
+import "./PostList.css";
 
 
 function PostsList() {
@@ -27,14 +28,12 @@ function PostsList() {
     const postsToDisplay = searchResults.length > 0 ? searchResults : posts;
   
     return (
-        <div>
+        <div className="postList">
             <h1>Reddit Posts</h1>
             <ul>
                 {postsToDisplay.map((post) => (
                 <li key={post.id}>
-                    <a href={`https://reddit.com${post.permalink}`} target="_blank" rel="noopener noreferrer">
-                    {post.title}
-                    </a>
+                    <Post post={post} />
                 </li>
                 ))}
             </ul>

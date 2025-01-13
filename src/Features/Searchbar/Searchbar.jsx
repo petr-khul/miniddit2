@@ -40,7 +40,6 @@ function Searchbar() {
   
       return (
         <div>
-          <h1>Search Reddit Posts</h1>
           <form onSubmit={handleSearchSubmit}>
             <input
               type="text"
@@ -50,9 +49,8 @@ function Searchbar() {
             />
             <button type="submit">Search</button>
           </form>
-
         </div>
       );
 };
 
-export default Searchbar
+export default Searchbar;

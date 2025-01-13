@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import store from './App/store'
-import './App.css'
-import PostsList from './Features/postList/PostList'
-import Searchbar from './Features/Searchbar/Searchbar'
+import { useState } from 'react';
+import './App.css';
+import PostsList from './Features/postList/PostList';
+import Header from './Features/Header/Header';
+import Subreddits from './Features/Subreddits/Subreddits';
+
 function App() {
 
 
   return (
     <>
-      <Searchbar />
+      <Header />
       <PostsList />
+      <Subreddits />
     </>
   )
 }
