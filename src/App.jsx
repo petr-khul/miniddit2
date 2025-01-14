@@ -9,9 +9,15 @@ function App() {
 
   return (
     <>
-      <Header />
-      <PostsList />
-      <Subreddits />
+      <header>
+        <Header />
+      </header>
+      <main>
+        <PostsList />
+      </main>
+      <aside>
+        <Subreddits />
+      </aside>
     </>
   )
 }

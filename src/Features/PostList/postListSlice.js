@@ -6,6 +6,7 @@ export const fetchPosts = createAsyncThunk(
     async (subreddit = 'javascript', thunkAPI) => {
       try {
         const response = await axios.get(`https://www.reddit.com/r/${subreddit}.json`);
+        
         // Extract necessary data from the response
         return response.data.data.children.map((child) => child.data);
       } catch (error) {

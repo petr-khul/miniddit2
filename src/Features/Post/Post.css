@@ -1,9 +1,38 @@
 .post {
     border: 1px solid #A43820;
-    margin: 20px 0;
+    margin: 20px auto;
     border-radius: 10px;
 }
 
+.postHeader {
+    background-color: #A43820;
+    color: #46211A;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.subredditIcon {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.subreddit_icon_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .postImage {
-    width: 800px;
+    width: 500px;
+}
+
+.postAuthor {
+    font-weight: bold;
 }
