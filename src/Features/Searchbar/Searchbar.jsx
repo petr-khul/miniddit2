@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { searchPosts, setSearchTerm } from "./searchSlice";
+import "./Searchbar.css";
 
 function Searchbar() {
   
@@ -40,7 +41,7 @@ function Searchbar() {
   
       return (
         <div>
-          <form onSubmit={handleSearchSubmit}>
+          <form onSubmit={handleSearchSubmit} className="searchInput">
             <input
               type="text"
               value={searchTerm}

@@ -5,4 +5,22 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 20px 0;
+}
+
+.headerIcon {
+    width: 50%;
+    height: 50%
+}
+
+.logo_h1 {
+    display: flex;
+    align-items: center;
+}
+
+.logo_h1 h1 {
+    margin-left: 10px;
 }

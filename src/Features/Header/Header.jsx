@@ -6,7 +6,10 @@ import React from 'react'
 export default function Header() {
   return (
     <div className="header">
-        <img src="./src/Features/Header/reddit.png" className="headerIcon" />
+        <div className="logo_h1">
+          <img src="./src/Features/Header/reddit.png" className="headerIcon" />
+          <h1>Miniddit</h1>
+        </div>
         <Searchbar />
     </div>
   )
