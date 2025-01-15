@@ -1,3 +1,7 @@
+.postList {
+    width: 800px;
+}
+
 .postList ul li {
     list-style-type: none;
 }

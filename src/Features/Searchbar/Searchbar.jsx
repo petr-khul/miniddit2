@@ -1,57 +1,45 @@
-import React, {useEffect} from 'react'
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchPosts, setSearchTerm } from "./searchSlice";
-import "./Searchbar.css";
+import { searchPosts, setSearchTerm, resetResults } from "./searchSlice";
 
 function Searchbar() {
-  
-    const dispatch = useDispatch();
-    const searchTerm = useSelector ((state) => state.search.searchTerm);
-    const results = useSelector((state) =>state.search.results);
-    const status = useSelector((state) => state.search.results);
-    const error = useSelector((state) => state.search.error);
+  const dispatch = useDispatch();
+  const [inputValue, setInputValue] = useState('');
 
-    const handleSearchChange = (e) => {
-        dispatch(setSearchTerm(e.target.value));
+  const status = useSelector((state) => state.search.status);
+  const error = useSelector((state) => state.search.error);
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setInputValue(value);
+    if (value.trim() === '') {
+      dispatch(resetResults()); // Reset results if input is empty
     }
+  };
 
-    const handleSearchSubmit = (e) => {
-        e.preventDefault();
-        if (searchTerm.trim()) {
-            dispatch(searchPosts(searchTerm));
-        }
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (inputValue.trim()) {
+      dispatch(setSearchTerm(inputValue));
+      dispatch(searchPosts(inputValue));
     }
+  };
 
-    useEffect(() => {
-        if (searchTerm) {
-          dispatch(searchPosts(searchTerm)); // Automatically search when term changes
-        } else {
-          // Reset results if the searchTerm is cleared
-          dispatch({ type: 'search/resetResults' });
-        }
-    }, [searchTerm, dispatch]);
-    
-      if (status === 'loading') {
-        return <div>Loading...</div>;
-      }
-    
-      if (status === 'failed') {
-        return <div>Error: {error}</div>;
-      }
-  
-      return (
-        <div>
-          <form onSubmit={handleSearchSubmit} className="searchInput">
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={handleSearchChange}
-              placeholder="Search Reddit..."
-            />
-            <button type="submit">Search</button>
-          </form>
-        </div>
-      );
-};
+  return (
+    <div>
+      <form onSubmit={handleSearchSubmit}>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder="Search Reddit..."
+        />
+        <button type="submit">Search</button>
+      </form>
+      {status === 'loading' && <div>Loading...</div>}
+      {status === 'failed' && <div>Error: {error}</div>}
+    </div>
+  );
+}
 
 export default Searchbar;

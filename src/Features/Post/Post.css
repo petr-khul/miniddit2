@@ -37,3 +37,9 @@
 .postAuthor {
     font-weight: bold;
 }
+
+.postBody {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+}

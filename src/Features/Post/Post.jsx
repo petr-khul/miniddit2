@@ -47,9 +47,11 @@ function Post({ post }) {
     }, [post.subreddit]);
 
     // Log the iconUrl when it changes for debugging
+    /*
     useEffect(() => {
         console.log("Icon URL set to:", iconUrl);
     }, [iconUrl]);
+    */
 
     return (
         <div className="post">
@@ -61,8 +63,12 @@ function Post({ post }) {
                     </span>
                     <span>Posted by <span className="postAuthor">{post.author}</span></span>
                     {timeAgo.format(post.created_utc * 1000)}
+
                 </p>
                 <div className="postBody">
+                    <a href={`https://reddit.com${post.permalink}`} target="_blank" rel="noopener noreferrer">
+                        {post.title}
+                    </a>
                     {post.preview && post.preview.images.length > 0 ? (
                         <img className="postImage" src={post.preview.images[0].source.url.replace(/&amp;/g, '&')} alt="Post content" />
                     ) : (
@@ -71,9 +77,7 @@ function Post({ post }) {
                         ) : null
                     )}
                 </div>
-                <a href={`https://reddit.com${post.permalink}`} target="_blank" rel="noopener noreferrer">
-                    {post.title}
-                </a>
+
             </div>
         </div>
     );

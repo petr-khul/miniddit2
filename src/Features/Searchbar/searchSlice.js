@@ -28,6 +28,11 @@ const searchSlice = createSlice({
         setSearchTerm: (state, action) => {
             state.searchTerm = action.payload;
         },
+        resetResults: (state) => {
+          state.results = []; // Clear search results
+          state.searchTerm = ""; // Optionally reset search term
+          state.status = "idle"; // Reset status to idle
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -45,5 +50,5 @@ const searchSlice = createSlice({
     },
 });
 
-export const { setSearchTerm } = searchSlice.actions;
+export const { setSearchTerm, resetResults } = searchSlice.actions;
 export default searchSlice.reducer;

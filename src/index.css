@@ -11,6 +11,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 a {
@@ -26,7 +29,8 @@ body {
   margin: 50px;
   padding: 0px;
   display: flex;
-  place-items: top;
+  align-items: flex-start;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
   border: 1px solid #46211A;
@@ -37,6 +41,13 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 button {
