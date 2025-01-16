@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchPosts, setSearchTerm, resetResults } from "./searchSlice";
+import "./Searchbar.css";
 
 function Searchbar() {
   const dispatch = useDispatch();
@@ -26,13 +27,14 @@ function Searchbar() {
   };
 
   return (
-    <div>
+    <div className ="searchInput">
       <form onSubmit={handleSearchSubmit}>
         <input
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Search Reddit..."
+          
         />
         <button type="submit">Search</button>
       </form>

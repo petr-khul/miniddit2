@@ -1,6 +1,7 @@
 .searchInput {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -9,6 +10,15 @@
     border-radius: 15px;
     background-color: #F1D3B2;
     color: #46211A;
+    border: 1px solid #46211A
+}
+
+.searchInput button:hover {
+    margin-left: 10px;
+    border-radius: 15px;
+    background-color: #f1d3b2cc;
+    color: #46211ab2;
+    border: 1px solid #46211A
 }
 
 .searchInput input {
@@ -16,5 +26,7 @@
     border-radius: 15px;
     background-color: #F1D3B2;
     color: #46211A;
+    border: 1px solid #46211A;
     padding: 0 10px;
+    height: 40px;
 }
