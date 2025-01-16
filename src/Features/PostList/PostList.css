@@ -1,7 +1,15 @@
 .postList {
-    width: 800px;
+    width: 700px;
+    padding: 0 auto;
+    margin: 0 auto;
 }
 
 .postList ul li {
     list-style-type: none;
+    padding: 0 auto;
+    margin: 0 auto;
+}
+
+.postList h1{
+    text-align: center;
 }

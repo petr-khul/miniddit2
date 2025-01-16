@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en.json';
 import "./Post.css";
+import Comments from '../Comments/Comments';
 
 TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo('en-US');
@@ -53,6 +55,8 @@ function Post({ post }) {
     }, [iconUrl]);
     */
 
+    
+
     return (
         <div className="post">
             <div>
@@ -77,7 +81,7 @@ function Post({ post }) {
                         ) : null
                     )}
                 </div>
-
+                <Comments post={post} />
             </div>
         </div>
     );

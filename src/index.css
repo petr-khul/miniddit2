@@ -26,16 +26,14 @@ a:hover {
 }
 
 body {
-  margin: 50px;
+
   padding: 0px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-  border: 1px solid #46211A;
-  border-radius: 15px;
-  box-shadow: 5px 5px 10px grey;
+
 }
 
 h1 {
@@ -45,9 +43,6 @@ h1 {
 
 #root {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 button {

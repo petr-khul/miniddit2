@@ -5,12 +5,19 @@
     justify-content: space-between;
 }
 
+.searchInput form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .searchInput button {
     margin-left: 10px;
     border-radius: 15px;
-    background-color: #F1D3B2;
-    color: #46211A;
-    border: 1px solid #46211A
+    background-color: #46211A;
+    color: #F1D3B2;
+    border: 1px solid #46211A;
+    transition: 0.5s;
 }
 
 .searchInput button:hover {
@@ -29,4 +36,16 @@
     border: 1px solid #46211A;
     padding: 0 10px;
     height: 40px;
+    font-weight: bolder;
+}
+
+.searchInput input:hover {
+    min-width: 300px;
+    border-radius: 15px;
+    background-color: #f1d3b2ec;
+    color: #46211A;
+    border: 1px solid #46211A;
+    padding: 0 10px;
+    height: 40px;
+    font-weight: bolder;
 }
