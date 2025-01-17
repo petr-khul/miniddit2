@@ -55,6 +55,7 @@ function Post({ post }) {
     }, [iconUrl]);
     */
 
+    console.log(post);
     
 
     return (
@@ -66,11 +67,11 @@ function Post({ post }) {
                         &nbsp;{post.subreddit_name_prefixed}
                     </span>
                     <span>Posted by <span className="postAuthor">{post.author}</span></span>
-                    {timeAgo.format(post.created_utc * 1000)}
+                    <span className="timeAgo">{timeAgo.format(post.created_utc * 1000)}</span>
 
                 </p>
                 <div className="postBody">
-                    <a href={`https://reddit.com${post.permalink}`} target="_blank" rel="noopener noreferrer">
+                    <a className="postH1" href={`https://reddit.com${post.permalink}`} target="_blank" rel="noopener noreferrer">
                         {post.title}
                     </a>
                     {post.preview && post.preview.images.length > 0 ? (
@@ -80,6 +81,7 @@ function Post({ post }) {
                             <img className="postImage" src={post.url} alt="Post content" />
                         ) : null
                     )}
+                    <p>{post.selftext}</p>
                 </div>
                 <Comments post={post} />
             </div>

@@ -1,0 +1,34 @@
+.commentBar {
+    background-color: #A43820;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.comments {
+    padding: 20px;
+    background-color: hsl(31, 69%, 75%);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.commentIcon {
+    height: 24px;
+    margin-right: 10px;
+}
+
+.commentInfo {
+    color: #F1D3B2;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.commentsNum {
+    font-weight: bolder;
+    margin-right: 5px;
+}

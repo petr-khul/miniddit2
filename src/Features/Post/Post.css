@@ -2,6 +2,7 @@
     border: 1px solid #A43820;
     margin: 20px 0;
     border-radius: 10px;
+    box-shadow: 5px 5px 10px grey;
 }
 
 .postHeader {
@@ -30,6 +31,10 @@
     justify-content: center;
 }
 
+.timeAgo {
+    font-style: italic;
+}
+
 .postImage {
     width: 500px;
 }
@@ -42,4 +47,11 @@
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
+}
+
+.postH1 {
+    font-size: 1.3rem;
+    color: #46211A;
+    font-weight: bold;
+    margin-bottom: 10px;
 }

@@ -1,3 +1,19 @@
 .profileImage {
     height: 16px;
+    border-radius: 50%;;
+    margin-right: 5px;
+}
+
+.comment {
+    display: flex;
+    align-items: center;
+    text-wrap: wrap;
+    margin: 0 auto;
+    border-bottom: 1px solid #46211A;
+    gap: 10px;
+}
+
+.commentAuthor {
+    font-weight: bolder;
+    margin-right: 10px;
 }
