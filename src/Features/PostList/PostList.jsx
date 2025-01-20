@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "./postListSlice";
 import Post from "../Post/Post";
 import "./PostList.css";
+import FailedFetchPosts from "./FailedFetchPosts";
 
 
 function PostsList() {
@@ -16,13 +17,19 @@ function PostsList() {
     useEffect(() => {
         dispatch(fetchPosts('popular'));
     }, [dispatch]);
+
+    const handleErrorButtonClick = () => {
+        dispatch(fetchPosts('popular'));
+    }
   
     if (status === "loading" || searchStatus === "loading") {
         return <div>Loading...</div>;
     }
     
     if (status === "failed" || searchStatus === "failed") {
-        return <div>Error: {error}</div>;
+        return (
+            <FailedFetchPosts error={error}/>
+        );
     }
 
     const postsToDisplay = searchResults.length > 0 ? searchResults : posts;

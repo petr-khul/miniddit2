@@ -35,6 +35,12 @@
     font-style: italic;
 }
 
+.postImageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .postImage {
     width: 500px;
 }
@@ -47,6 +53,8 @@
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .postH1 {
@@ -54,4 +62,11 @@
     color: #46211A;
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.postText {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden; 
 }

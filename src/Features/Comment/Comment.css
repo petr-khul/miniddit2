@@ -11,6 +11,10 @@
     margin: 0 auto;
     border-bottom: 1px solid #46211A;
     gap: 10px;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden; 
 }
 
 .commentAuthor {

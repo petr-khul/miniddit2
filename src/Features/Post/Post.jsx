@@ -74,14 +74,16 @@ function Post({ post }) {
                     <a className="postH1" href={`https://reddit.com${post.permalink}`} target="_blank" rel="noopener noreferrer">
                         {post.title}
                     </a>
-                    {post.preview && post.preview.images.length > 0 ? (
-                        <img className="postImage" src={post.preview.images[0].source.url.replace(/&amp;/g, '&')} alt="Post content" />
-                    ) : (
-                        post.url && post.url.match(/\.(jpeg|jpg|gif|png)$/) ? (
-                            <img className="postImage" src={post.url} alt="Post content" />
-                        ) : null
-                    )}
-                    <p>{post.selftext}</p>
+                    <div className="postImageContainer">
+                        {post.preview && post.preview.images.length > 0 ? (
+                            <img className="postImage" src={post.preview.images[0].source.url.replace(/&amp;/g, '&')} alt="Post content" />
+                        ) : (
+                            post.url && post.url.match(/\.(jpeg|jpg|gif|png)$/) ? (
+                                <img className="postImage" src={post.url} alt="Post content" />
+                            ) : null
+                        )}
+                    </div>
+                    <p className="postText">{post.selftext}</p>
                 </div>
                 <Comments post={post} />
             </div>

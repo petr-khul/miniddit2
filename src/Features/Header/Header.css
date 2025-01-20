@@ -7,7 +7,8 @@
     justify-content: space-around;
     align-items: center;
     box-shadow: 5px 5px 10px grey;
-    border-radius: 5px
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .headerIcon {

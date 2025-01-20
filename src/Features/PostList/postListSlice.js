@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const fetchPosts = createAsyncThunk(
     'postList/fetchPosts',
-    async (subreddit = 'javascript', thunkAPI) => {
+    async (subreddit = 'popular', thunkAPI) => {
       try {
         const response = await axios.get(`https://www.reddit.com/r/${subreddit}.json`);
         //console.log(response)
